@@ -1,7 +1,8 @@
 **/dist/*
 **/node_modules/*
-**/dev-server.js
+**/server.js
 **/webpack.config*.js
 **/karma.conf.js
 **/karma.conf.coverage.js
 **/test/index.js
+**/server/*

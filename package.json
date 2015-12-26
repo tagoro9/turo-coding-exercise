@@ -7,7 +7,7 @@
     "clean": "rimraf dist",
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
-    "start": "node dev-server.js",
+    "start": "node server.js",
     "lint": "eslint src test",
     "test": "karma start",
     "coverage": "karma start karma.conf.coverage.js"
@@ -16,10 +16,12 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.3",
+    "ramda": "^0.19.0",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-redux": "^4.0.0",
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "request": "^2.67.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
