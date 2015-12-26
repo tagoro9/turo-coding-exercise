@@ -1,0 +1,17 @@
+# Intellij project folder
+.idea/
+*.iml
+
+# Node modules folder
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dist folder
+dist/
+
+# Code coverage reports
+coverage/
