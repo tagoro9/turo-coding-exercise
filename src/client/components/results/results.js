@@ -123,6 +123,10 @@ Results.propTypes = {
    * Close a car handler function
    */
   closeCar: PropTypes.func.isRequired,
+  /**
+   * Change path handler function
+   */
+  pushPath: PropTypes.func.isRequired,
 };
 
 Results.defaultProps = {

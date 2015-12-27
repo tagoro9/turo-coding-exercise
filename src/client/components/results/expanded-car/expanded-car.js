@@ -69,21 +69,21 @@ const FIELDS = [
  */
 class ExpandedCar extends React.Component {
 
-  /**
-   * Render the rows displaying the car info
-   * @returns {Array} List of rows
-   * @private
-     */
-  _renderRows() {
-    return FIELDS.map((f) => <Row key={f.name} icon={f.icon} label={f.label} text={this.props.data.get(f.name)}/>);
-  }
-
   componentDidMount() {
     ReactDOM.findDOMNode(this).scrollIntoViewIfNeeded(true);
   }
 
   componentDidUpte() {
     ReactDOM.findDOMNode(this).scrollIntoViewIfNeeded(true);
+  }
+
+  /**
+   * Render the rows displaying the car info
+   * @returns {Array} List of rows
+   * @private
+   */
+  _renderRows() {
+    return FIELDS.map((f) => <Row key={f.name} icon={f.icon} label={f.label} text={this.props.data.get(f.name)}/>);
   }
 
   render() {

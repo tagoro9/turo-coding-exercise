@@ -5,7 +5,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
-import { createHistory } from 'history'
+import { createHistory } from 'history';
 import { syncReduxAndRouter, routeReducer } from 'redux-simple-router';
 
 

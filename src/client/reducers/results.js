@@ -1,6 +1,9 @@
 import Immutable, {List} from 'immutable';
 
-
+/**
+ * Reducer in charge of the results state. That is,
+ * the list of cars and the id of the opened car
+ */
 const initialState = Immutable.fromJS({
   cars: new List(),
   openedId: null,

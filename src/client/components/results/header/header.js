@@ -1,12 +1,12 @@
 import React, {PropTypes} from 'react';
-import {SelectField, MenuItem, FloatingActionButton, FontIcon} from 'material-ui';
+import {FloatingActionButton, FontIcon} from 'material-ui';
 
 import styles from './header.css';
 
 /**
  * Header of the results page. It has a title, the string
- * the user searched for and some controls to sort results
- * and get back to the search page
+ * the user searched for and some controls
+ * get back to the search page
  */
 class Header extends React.Component {
 
@@ -18,12 +18,6 @@ class Header extends React.Component {
             <span>Search results</span>
             <small>{this.props.searchString}</small>
           </h2>
-        </div>
-        <div className={styles.controls}>
-          <SelectField fullWidth hintText="Sort by">
-            <MenuItem value="priceUp" primaryText="Price Asc"/>
-            <MenuItem value="priceDown" primaryText="Price Desc"/>
-          </SelectField>
         </div>
         <FloatingActionButton className={styles.search} onClick={this.props.onSearch}>
           <FontIcon className="material-icons">search</FontIcon>
