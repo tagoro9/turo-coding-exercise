@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import ReactDOM from 'react-dom';
 import {Map} from 'immutable';
 import {Paper, RaisedButton} from 'material-ui';
 
@@ -14,6 +15,21 @@ const FIELDS = [
     name: 'HWRefNumber',
     label: 'Hotwire reference',
     icon: 'link',
+  },
+  {
+    name: 'PossibleFeatures',
+    label: 'Possible features',
+    icon: 'playlist_add_check',
+  },
+  {
+    name: 'TypicalSeating',
+    label: 'Seating',
+    icon: 'weekend',
+  },
+  {
+    name: 'CarTypeName',
+    label: 'Car Type',
+    icon: 'build',
   },
   {
     name: 'SubTotal',
@@ -62,11 +78,18 @@ class ExpandedCar extends React.Component {
     return FIELDS.map((f) => <Row key={f.name} icon={f.icon} label={f.label} text={this.props.data.get(f.name)}/>);
   }
 
-  render() {
+  componentDidMount() {
+    ReactDOM.findDOMNode(this).scrollIntoViewIfNeeded(true);
+  }
 
+  componentDidUpte() {
+    ReactDOM.findDOMNode(this).scrollIntoViewIfNeeded(true);
+  }
+
+  render() {
     return (
-      <Paper className={styles.expandedCar} zDepth={3}>
-        <Title title={this.props.data.get('CarTypeCode')} price={this.props.data.get('TotalPrice')} />
+      <Paper className={styles.expandedCar} onClick={this.props.onClick} zDepth={3}>
+        <Title title={this.props.data.get('PossibleModels')} price={this.props.data.get('TotalPrice')} />
         <div className={styles.expandedCarInfo}>
           {this._renderRows()}
           <div className={styles.buttonContainer}>
@@ -88,6 +111,10 @@ ExpandedCar.propTypes = {
    * Car data
    */
   data: PropTypes.instanceOf(Map).isRequired,
+  /**
+   * Click handle function
+   */
+  onClick: PropTypes.func,
 };
 
 ExpandedCar.defaultProps = {

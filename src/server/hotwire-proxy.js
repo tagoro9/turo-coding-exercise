@@ -24,7 +24,7 @@ module.exports = function(app, config) {
     }, function (error, response, body) {
       // Check errors
       if (error || response.statusCode !== 200) {
-        return res.status(response.statusCode).json({message: 'Something went wrong'}).end();
+        return res.status(response && response.statusCode ? response.statusCode : 500).json({message: 'Something went wrong'}).end();
       }
       // Get JSON response
       // TODO catch parse errors

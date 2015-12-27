@@ -16,7 +16,7 @@
   line-height: 25px;
 }
 
-.expandedCarRow span {
+.expandedCarRow div:last-child {
   flex: 1 0 0;
   text-align: right;
 }

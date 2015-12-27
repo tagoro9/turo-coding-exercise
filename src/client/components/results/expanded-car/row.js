@@ -17,7 +17,7 @@ class ExpandedCarRow extends React.Component {
             <FontIcon className="material-icons">{this.props.icon}</FontIcon>
             <span>{this.props.label}</span>
           </div>
-          <span>{this.props.text}</span>
+          <div>{this.props.text}</div>
         </div>
         <Divider/>
       </div>

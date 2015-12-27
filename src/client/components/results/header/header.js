@@ -25,7 +25,7 @@ class Header extends React.Component {
             <MenuItem value="priceDown" primaryText="Price Desc"/>
           </SelectField>
         </div>
-        <FloatingActionButton className={styles.search}>
+        <FloatingActionButton className={styles.search} onClick={this.props.onSearch}>
           <FontIcon className="material-icons">search</FontIcon>
         </FloatingActionButton>
       </div>
@@ -39,6 +39,10 @@ Header.propTypes = {
    * String that represents the search made by the user
    */
   searchString: PropTypes.string.isRequired,
+  /**
+   * Search button click handler
+   */
+  onSearch: PropTypes.func,
 };
 
 Header.defaultProps = {

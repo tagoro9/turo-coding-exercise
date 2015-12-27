@@ -8,3 +8,10 @@
 .loader span {
   margin-top: 30px;
 }
+
+.back {
+  position: fixed !important;
+  display: block;
+  flex-direction: row;
+  margin-top: -20px;
+}

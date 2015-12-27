@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
-import FontIcon from '../../../../node_modules/material-ui/lib/font-icon';
-import Divider from '../../../../node_modules/material-ui/lib/divider';
+import {FontIcon, Divider} from 'material-ui';
 
 import styles from './car.css';
 
@@ -12,7 +11,7 @@ class Car extends React.Component {
 
   render() {
     return (
-      <div>
+      <div onClick={this.props.onClick}>
         <div className={styles.car}>
           <div className={styles.carIcon}>
             <FontIcon className="material-icons">directions_car</FontIcon>
@@ -41,6 +40,10 @@ Car.propTypes = {
    * Car description
    */
   title: PropTypes.string.isRequired,
+  /**
+   * Click handler function
+   */
+  onClick: PropTypes.func,
 };
 
 Car.defaultProps = {
