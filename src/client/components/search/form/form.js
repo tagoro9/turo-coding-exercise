@@ -30,6 +30,7 @@ class Form extends PureComponent {
         <DatePicker
           fullWidth
           hintText="Start date"
+          floatingLabelText="Start date"
           value={this.props.data.get('startDate')}
           onChange={this._handleInputChange('startDate').bind(this)}
           errorText={this.props.errors.get('startDateErrorText')}
@@ -37,6 +38,7 @@ class Form extends PureComponent {
         <DatePicker
           fullWidth
           hintText="End date"
+          floatingLabelText="End date"
           value={this.props.data.get('endDate')}
           onChange={this._handleInputChange('endDate').bind(this)}
           errorText={this.props.errors.get('endDateErrorText')}
@@ -46,6 +48,7 @@ class Form extends PureComponent {
           ref="pickupTime"
           format="24hr"
           hintText="Pickup time"
+          floatingLabelText="Pickup time"
           defaultTime={this.props.data.get('pickupTime')}
           onChange={this._handleInputChange('pickupTime').bind(this)}
           errorText={this.props.errors.get('pickupTimeErrorText')}
@@ -55,6 +58,7 @@ class Form extends PureComponent {
           fullWidth
           format="24hr"
           hintText="Drop off time"
+          floatingLabelText="Drop off time"
           defaultTime={this.props.data.get('dropOffTime')}
           onChange={this._handleInputChange('dropOffTime').bind(this)}
           errorText={this.props.errors.get('dropOffTimeErrorText')}
