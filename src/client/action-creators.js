@@ -9,13 +9,15 @@ import { pushPath as changePath } from 'redux-simple-router';
  * inside the app.
  */
 
+
 /**
- * Set a new state in the store
+ * Handle form with errors
+ * @param errors Form errors
  */
-export function setState(state) {
+export function formErrors(errors) {
   return {
-    type: 'SET_STATE',
-    state,
+    type: 'FORM_ERRORS',
+    errors,
   };
 }
 
@@ -97,10 +99,30 @@ const readParameters = (data) => {
 };
 
 /**
+ * Validate form data. If there are errors, return an object with them,
+ * if not return null
+ * @param data
+ */
+const validateData = (data) => {
+  const errors = {};
+  data.forEach((v, k) => {
+    if (!v || v.length === 0) {
+      errors[k + 'ErrorText'] = 'This field is required';
+    }
+  });
+  return Object.keys(errors).length === 0 ? null : errors;
+};
+
+/**
  * Search results
  */
 export function search(data) {
   return (dispatch, getState) => {
+    // Validate form before doing anything
+    const errors = validateData(data);
+    if (errors) {
+      return dispatch(formErrors(errors));
+    }
     const url = '/api/search/?' + Qs.stringify(readParameters(data));
     // Indicate search was started
     dispatch(searchStarted());
@@ -130,6 +152,7 @@ export function search(data) {
     })
     .catch((ex) => {
       // Display errors if any
+      console.log(ex);
       dispatch(searchError(ex.errors || ['There was a problem connecting to the server. Try again later.']));
     });
   };

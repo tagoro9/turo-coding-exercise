@@ -1,4 +1,4 @@
-import Immutable, {List} from 'immutable';
+import Immutable, {List, Map} from 'immutable';
 
 /**
  * Reducers in charge of serch realted stuff
@@ -7,11 +7,11 @@ import Immutable, {List} from 'immutable';
 const initialState = Immutable.fromJS({
   form: {
     data: {
-      dest: 'LAX',
-      startDate: new Date('01/12/2016'),
-      endDate: new Date('01/15/2016'),
-      pickupTime: new Date(),
-      dropOffTime: new Date(),
+      dest: '',
+      startDate: null,
+      endDate: null,
+      pickupTime: null,
+      dropOffTime: null,
     },
     errors: {
       destErrorText: null,
@@ -29,13 +29,15 @@ const initialState = Immutable.fromJS({
 export default function search(state = initialState, action) {
   switch (action.type) {
   case 'SEARCH_STARTED':
-    return state.set('loading', true).setIn(['form', 'serverErrors'], new List());
+    return state.set('loading', true).setIn(['form', 'serverErrors'], new List()).setIn(['form', 'errors'], new Map());
   case 'SEARCH_ERROR':
     return state.set('loading', false).setIn(['form', 'serverErrors'], new List(action.errors));
   case 'CANCEL_SEARCH':
     return state.set('loading', false).setIn(['form', 'serverErrors'], new List());
   case 'RECEIVE_CARS':
     return state.set('loading', false).setIn(['form', 'serverErrors'], new List());
+  case 'FORM_ERRORS':
+    return state.setIn(['form', 'errors'], new Map(action.errors));
   case 'UPDATE_FORM':
     return state.setIn(['form', 'data'], action.data);
   default:
