@@ -1,14 +1,14 @@
 # Turo frontend coding exercise
 
 This is a webapp made for the Turo frontend [coding exercise](https://github.com/relayrides/coding-exercise).
-It is a single-page rental car search [Hotwire’s Shopping API](http://developer.hotwire.com/docs/Rental_Car_Shopping_API).
+It is a single-page rental car search that uses [Hotwire’s Shopping API](http://developer.hotwire.com/docs/Rental_Car_Shopping_API).
 It allows the user to:
 
 * search by date and location
 * view results in a list
 * click on a result to view more details about the car
 
-This app has been developed using the seed project [react-starter](https://github.com/tagoro9/react-starter)
+This app has been developed using my seed project [react-starter](https://github.com/tagoro9/react-starter)
 
 ## Features
 
@@ -26,8 +26,6 @@ This app has been developed using the seed project [react-starter](https://githu
 * Redux
 * CSS Modules
 * Live code updates
-* Karma + Mocha for tests
-* Code coverage with isparta
 
 ## Getting started
 
@@ -38,8 +36,6 @@ To run the development server just run:
 The rest of the commands available can be found in `package.json`:
 
 * `server` Production build & run production server
-* `test` for running the tests (without coverage)
-* `coverage` for running the tests with coverage (proper for CI servers)
 * `build` for production builds
 * `clean` is kinda obvious
 * `lint` for code linting
