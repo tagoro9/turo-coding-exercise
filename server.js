@@ -13,20 +13,22 @@ var webpackMiddleware = require('./src/server/webpack-middleware');
  */
 var app = express();
 
-// Webpack middleware
+// Webpack middleware and dist folder prefix
+var prefix = 'dist/';
 if (process.env.NODE_ENV !== 'production') {
   webpackMiddleware(app);
+  prefix = '';
 }
 
 // HotWire proxy
 hotWireProxy(app, config.hotWire);
 
 // Static files
-app.use('/static', express.static('static'));
+app.use('/static', express.static(prefix + 'static'));
 
 // Always return index.html (routing is done in the webapp)
 app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, prefix + 'index.html'));
 });
 
 app.listen(process.env.PORT || config.port, 'localhost', function(err) {

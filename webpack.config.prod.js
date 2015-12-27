@@ -27,7 +27,7 @@ config.plugins = config.plugins.concat([
   new webpack.optimize.DedupePlugin(),
   new webpack.optimize.OccurenceOrderPlugin(),
   new ExtractTextPlugin('style.[contenthash].css', { allChunks: true }),
-  new HtmlWebpackPlugin({filename: '../index.html'}),
+  new HtmlWebpackPlugin({filename: '../index.html', template: './index.prod.html', inject: 'body'}),
   new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')
