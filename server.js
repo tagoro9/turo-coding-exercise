@@ -31,7 +31,7 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, prefix + 'index.html'));
 });
 
-app.listen(process.env.OPENSHIFT_NODEJS_PORT || config.port, 'localhost', function(err) {
+app.listen(process.env.PORT || config.port, 'localhost', function(err) {
   if (err) {
     console.log(err);
     return;
