@@ -12,6 +12,11 @@ This app has been developed using the seed project [react-starter](https://githu
 
 ## Features
 
+* Material design.
+* Search form validation.
+* Handles server errors.
+* Proxy calls to HotWire servers (e.g. for security or caching purposes).
+
 ## Stack
 
 * Webpack
@@ -32,6 +37,7 @@ To run the development server just run:
     
 The rest of the commands available can be found in `package.json`:
 
+* `server` Production build & run production server
 * `test` for running the tests (without coverage)
 * `coverage` for running the tests with coverage (proper for CI servers)
 * `build` for production builds
