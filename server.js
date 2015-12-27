@@ -3,7 +3,6 @@ var path = require('path');
 
 var config = require('./src/server/config');
 var hotWireProxy = require('./src/server/hotwire-proxy');
-var webpackMiddleware = require('./src/server/webpack-middleware');
 
 /**
  * Application server. It proxies API calls to
@@ -16,6 +15,7 @@ var app = express();
 // Webpack middleware and dist folder prefix
 var prefix = 'dist/';
 if (process.env.NODE_ENV !== 'production') {
+  var webpackMiddleware = require('./src/server/webpack-middleware');
   webpackMiddleware(app);
   prefix = '';
 }
@@ -31,12 +31,12 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, prefix + 'index.html'));
 });
 
-app.listen(process.env.PORT || config.port, 'localhost', function(err) {
+app.listen(process.env.PORT || config.port, function(err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:3000');
+  console.log('Listening now');
 });
 
