@@ -1,0 +1,15 @@
+.searchContainer {
+  composes: row from "flexboxgrid/dist/flexboxgrid.css";
+  margin: 0;
+}
+
+.searchBox {
+  composes: col-sm-offset-2 from "flexboxgrid/dist/flexboxgrid.css";
+  composes: col-sm-8 from "flexboxgrid/dist/flexboxgrid.css";
+  composes: col-lg-offset-3 from "flexboxgrid/dist/flexboxgrid.css";
+  composes: col-lg-6 from "flexboxgrid/dist/flexboxgrid.css";
+  composes: col-xs-offset-1 from "flexboxgrid/dist/flexboxgrid.css";
+  composes: col-xs-10 from "flexboxgrid/dist/flexboxgrid.css";
+  margin-top: 20px;
+  padding: 0 20px 20px;
+}

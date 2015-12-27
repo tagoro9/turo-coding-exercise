@@ -1,0 +1,28 @@
+.expandedCarTitle {
+  composes: col-xs-12 from "flexboxgrid/dist/flexboxgrid.css";
+}
+
+.expandedCarTitle h3 {
+  font-weight: 400;
+}
+
+.expandedCarTitle div {
+  display: inline-flex;
+}
+
+.expandedCarTitle div span:last-child {
+  height: 25px;
+  line-height: 25px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.expandedCarTitle h3 small {
+  float: right;
+  display: flex;
+}
+
+.expandedCarTitle h3 small span:last-child {
+  height: 25px;
+  line-height: 26px;
+}

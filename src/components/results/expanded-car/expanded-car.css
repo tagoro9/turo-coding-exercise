@@ -1,0 +1,27 @@
+.expandedCar {
+  composes: row from "flexboxgrid/dist/flexboxgrid.css";
+  margin-top: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  padding: 15px 20px;
+}
+
+.expandedCarInfo {
+  composes: col-xs-10 from "flexboxgrid/dist/flexboxgrid.css";
+  composes: col-xs-offset-1 from "flexboxgrid/dist/flexboxgrid.css";
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.expandedCarInfo div span {
+  margin-right: 5px;
+  height: 25px;
+  vertical-align: middle;
+  line-height: 25px;
+}
+
+.expandedCarInfo .buttonContainer {
+  margin: 30px auto auto;
+  text-align: center;
+}

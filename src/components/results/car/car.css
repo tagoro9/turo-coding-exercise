@@ -1,0 +1,28 @@
+.car {
+  composes: row from "flexboxgrid/dist/flexboxgrid.css";
+  padding: 10px 15px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.carIcon {
+  composes: col-xs-1 from "flexboxgrid/dist/flexboxgrid.css";
+}
+
+.carTitle {
+  composes: col-xs-8 from "flexboxgrid/dist/flexboxgrid.css";
+  align-self: center;
+}
+
+
+.carPrice {
+  composes: col-xs-3 from "flexboxgrid/dist/flexboxgrid.css";
+  align-self: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.carPrice span {
+  height: 25px;
+  line-height: 25px;
+}

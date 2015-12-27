@@ -4,5 +4,5 @@
 **/webpack.config*.js
 **/karma.conf.js
 **/karma.conf.coverage.js
-**/test/index.js
+**/test/app.js
 **/server/*

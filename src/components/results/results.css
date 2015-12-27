@@ -1,0 +1,9 @@
+.results {
+  composes: row from "flexboxgrid/dist/flexboxgrid.css";
+  margin: 0 0 30px;
+}
+
+.cars {
+  composes: col-xs-12 from "flexboxgrid/dist/flexboxgrid.css";
+  padding: 0 5%;
+}

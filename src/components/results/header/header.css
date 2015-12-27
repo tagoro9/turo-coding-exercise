@@ -1,0 +1,33 @@
+.header {
+  composes: row from "flexboxgrid/dist/flexboxgrid.css";
+  width: 100%;
+  margin: 0;
+}
+
+.title {
+  composes: col-xs-8 from "flexboxgrid/dist/flexboxgrid.css";
+  padding: 24px 24px 0;
+}
+
+.title h2 {
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+}
+
+.title h2 small {
+  font-size: 50%;
+  margin-left: 10px;
+  clear: both;
+}
+
+.controls {
+  composes: col-xs-3 from "flexboxgrid/dist/flexboxgrid.css";
+  align-self: center;
+  padding: 24px 24px 0;
+}
+
+.search {
+  position: fixed !important;
+  bottom: 30px;
+  right: 30px;
+}
