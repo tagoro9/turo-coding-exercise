@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-fetch';
-import Qs from 'qs';
 import moment from 'moment';
 import R from 'ramda';
 import { pushPath as changePath } from 'redux-simple-router';
@@ -89,13 +88,11 @@ const roundTime = (time) => {
  * @returns {{dest: *, startdate: *, enddate: *, pickuptime: *, dropofftime: *}}
  */
 const readParameters = (data) => {
-  return {
-    dest: data.get('dest'),
-    startdate: moment(data.get('startDate')).format('MM/DD/YYYY'),
-    enddate: moment(data.get('endDate')).format('MM/DD/YYYY'),
-    pickuptime: roundTime(data.get('pickupTime')),
-    dropofftime: roundTime(data.get('dropOffTime')),
-  };
+  return `dest=${data.get('dest')}&` +
+    `startdate=${moment(data.get('startDate')).format('MM/DD/YYYY')}` +
+    `&enddate=${moment(data.get('endDate')).format('MM/DD/YYYY')}` +
+    `&pickuptime=${roundTime(data.get('pickupTime'))}` +
+    `&dropofftime=${roundTime(data.get('dropOffTime'))}`;
 };
 
 /**
@@ -123,7 +120,7 @@ export function search(data) {
     if (errors) {
       return dispatch(formErrors(errors));
     }
-    const url = '/api/search/?' + Qs.stringify(readParameters(data));
+    const url = '/api/search/?' + readParameters(data);
     // Indicate search was started
     dispatch(searchStarted());
     // Load data
