@@ -140,7 +140,7 @@ function mapStateToProps(state) {
   return {
     cars: state.results.get('cars'),
     openedId: state.results.get('openedId'),
-    searchString: state.search.get('searchString'),
+    searchString: state.search.get('string'),
   };
 }
 

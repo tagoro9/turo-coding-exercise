@@ -89,7 +89,7 @@ class ExpandedCar extends React.Component {
   render() {
     return (
       <Paper className={styles.expandedCar} onClick={this.props.onClick} zDepth={3}>
-        <Title title={this.props.data.get('PossibleModels')} price={this.props.data.get('TotalPrice')} />
+        <Title title={this.props.data.get('PossibleModels') || this.props.data.get('CarTypeCode')} price={this.props.data.get('TotalPrice')} />
         <div className={styles.expandedCarInfo}>
           {this._renderRows()}
           <div className={styles.buttonContainer}>
