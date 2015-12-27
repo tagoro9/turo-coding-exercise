@@ -31,11 +31,11 @@ This app has been developed using my seed project [react-starter](https://github
 
 To run the development server just run:
 
-    npm start
+    npm run dev
     
 The rest of the commands available can be found in `package.json`:
 
-* `server` Production build & run production server
+* `start` Production build & run production server
 * `build` for production builds
 * `clean` is kinda obvious
 * `lint` for code linting
