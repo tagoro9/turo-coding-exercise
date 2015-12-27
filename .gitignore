@@ -10,8 +10,5 @@ logs
 *.log
 npm-debug.log*
 
-# Dist folder
-dist/
-
 # Code coverage reports
 coverage/
