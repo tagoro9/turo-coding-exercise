@@ -107,6 +107,13 @@ const validateData = (data) => {
       errors[k + 'ErrorText'] = 'This field is required';
     }
   });
+  const start = moment(data.get('startDate'));
+  const end = moment(data.get('endDate'));
+  if (end.isBefore(start) || start.isSame(end)) {
+    const error = 'Start date should be before end date';
+    errors.startDateErrorText = error;
+    errors.endDateErrorText = error;
+  }
   return Object.keys(errors).length === 0 ? null : errors;
 };
 
@@ -136,7 +143,7 @@ export function search(data) {
     })
     .then(json => {
       // Include car type information into list and parse results
-      const cars = json.Result.map(c => {
+      const cars = (json.Result || []).map(c => {
         const type = (R.path(['MetaData', 'CarMetaData', 'CarTypes'], json) || []).find(t => t.CarTypeCode === c.CarTypeCode);
         return R.merge(c, type);
       });
